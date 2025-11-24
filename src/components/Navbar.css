@@ -1,0 +1,135 @@
+* {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 500;
+}
+
+.panel-content h2,
+.panel-content button,
+.panel-content div,
+.panel-content span {
+  font-weight: 300;
+}
+
+
+.hamburger {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 32px;
+  height: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1100;
+  transition: all 0.3s ease;
+}
+
+.hamburger div {
+  height: 4px;
+  background: #000;
+  border-radius: 2px;
+  transition: all 0.35s ease;
+}
+
+/* When open */
+.hamburger.open div:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+
+.hamburger.open div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open div:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
+
+/* ============================= */
+/* Slide Panel - Smooth */
+/* ============================= */
+
+.side-panel {
+  position: fixed;
+  top: 0;
+  left: -350px;
+  width: 350px;
+  height: 100vh;
+  background: #000000;
+  color: white;
+  padding: 40px 22px;
+  transition: left 0.45s cubic-bezier(0.25, 0.1, 0.25, 1); /* smoother easing */
+  z-index: 1000;
+}
+
+.side-panel.open {
+  left: 0;
+}
+
+/* ============================= */
+/* Overlay Fade */
+/* ============================= */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 900;
+  opacity: 0;
+  animation: fadeIn 0.4s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Panel Content */
+.panel-content h2 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  animation: slideText 0.6s ease;
+}
+
+@keyframes slideText {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.nav-link {
+  color: white;           /* make it same as h2 */
+  text-decoration: none;  /* remove underline */
+  font-size: 2rem;        /* match the h2 size */
+  font-weight: 300;       /* same as your other menu items */
+  display: block;
+  margin-bottom: 20px;    /* same spacing as h2 */
+  transition: 0.3s ease;
+}
+
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+/* Allow hamburger to stay in its correct location */
+.hamburger {
+  position: fixed;
+  top: 20px; 
+  left: 20px;
+  z-index: 1200;
+}
+
+/* Hover opens panel */
+.hamburger:hover + .side-panel,
+.side-panel:hover {
+  left: 0;
+}
+
+/* Keep panel default closed */
+.side-panel {
+  left: -350px;
+  position: fixed;
+  top: 0;
+}

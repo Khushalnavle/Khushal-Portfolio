@@ -1,0 +1,149 @@
+/* ----------------------------- */
+/* ORIGINAL SECTION (WITH CHANGES) */
+/* ----------------------------- */
+.gallery-container {
+  width: 100%;
+  /* Removed min-height: 100vh; to allow content height to dictate total page height naturally */
+  padding: 60px 80px;
+  background: #ffffff;
+}
+
+/* ----------------------------- */
+/* MASONRY GRID (Modified for uncropped images) */
+/* ----------------------------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* **REMOVED:** grid-auto-rows: 240px; 
+     * This fixed height forces cropping. We need the rows to adjust to the image height. */
+  grid-auto-rows: auto; /* Use auto for rows to adapt to content height */
+  gap: 25px;
+  grid-auto-flow: dense;
+}
+
+/* ----------------------------- */
+/* GALLERY CARD (Modified) */
+/* ----------------------------- */
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  cursor: pointer;
+  transition: transform 0.35s ease;
+  height: auto; /* Ensure card height adjusts to image */
+}
+
+.gallery-card:hover {
+  transform: scale(1.03);
+}
+
+/* ----------------------------- */
+/* IMAGE (Black & white → Color) */
+/* ----------------------------- */
+
+.gallery-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: filter 0.4s ease, opacity 0.4s ease;
+  filter: grayscale(100%);
+}
+
+.gallery-card:hover .gallery-img {
+  filter: grayscale(0%); /* turn color on hover */
+  opacity: 1;
+}
+
+
+
+/* overlay (No change needed) */
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: white;
+  opacity: 0;
+  transition: 0.35s ease;
+}
+
+.gallery-card:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* ----------------------------- */
+/* SIZE VARIANTS (Crucial changes) */
+/* ----------------------------- */
+/* Since we removed fixed row heights, these span rules need to be adjusted or removed
+   to prevent unusual stretching/spacing unless you define the spans using ratio-based techniques.
+   For standard unc-ropped images, these can often be removed or simplified. 
+   
+   If you want to keep the "masonry" look (where the height varies) without cropping:
+   * **Do NOT use CSS Grid** (the standard way you are using it). CSS Grid requires fixed row heights to work well with `grid-row: span X`.
+   * **Use the CSS `column-count` method** (which you had at the end of your original code) **OR** a proper Masonry library.
+
+   **I recommend using the Column-Count method below for uncropped images with varying heights.**
+*/
+
+/* ----------------------------- */
+/* Responsive Rules & Column-Count Masonry */
+/* ----------------------------- */
+
+/* **NOTE:** The properties below conflict with the `display: grid` properties above. 
+   If you want *uncropped* images with *varying heights* (True Masonry), **use this block** and remove the `display: grid` section. 
+   
+   For this column-based masonry to work, we need to make sure the card sizes are removed.
+*/
+
+.gallery-grid {
+  /* This setup replaces the Grid setup for true masonry with uncropped images */
+  display: block; /* Overrides display: grid */
+  column-count: 3;
+  column-gap: 25px;
+}
+
+.gallery-card {
+  /* Required for column-based masonry */
+  break-inside: avoid;
+  margin-bottom: 25px;
+  overflow: hidden;
+  width: 100%; /* Ensure card takes up full column width */
+}
+
+.gallery-img {
+  width: 100%;
+  height: auto;
+  /* Use 'contain' to prevent cropping */
+  object-fit: contain; 
+  /* ... rest of the image rules ... */
+}
+
+/* Responsive Rules for Column-Count Masonry */
+@media (max-width: 1000px) {
+  .gallery-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-grid {
+    column-count: 1;
+  }
+}
+
+/* Quote above gallery */
+.gallery-quote {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 300;
+  font-size: 1.7rem;
+  opacity: 0.85;
+
+  text-align: center;       /* centered */
+  width: 100%;              /* full width so text-align works */
+
+  margin-top: 100px;         /* pushes downward from top */
+  margin-bottom: 150px;      /* extra space before images */
+}
+

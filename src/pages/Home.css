@@ -1,0 +1,302 @@
+.home-container {
+  background: #fdfdfd;
+  color: rgb(202, 202, 202);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.home-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  background: #fff; /* white background */
+  padding: 0 80px;
+  align-items: center;
+}
+
+/* LEFT SIDE TEXT */
+.home-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.home-title {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.home-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+/* RIGHT SIDE IMAGE */
+.home-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-img {
+  width: 100%;
+  max-width: 500px;
+  margin-top: -40px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-subtitle {
+  color: #000000;
+  font-weight: 300;
+}
+
+/* ========================= */
+/* ABOUT — PHOTO CENTER LAYOUT */
+/* ========================= */
+
+.about-creative {
+  margin-top: 140px;
+  padding: 150px 0;
+  background: #ffffff;
+
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Center Photo */
+.about-center-img {
+  position: relative;
+  z-index: 2;
+}
+
+.about-photo {
+  width: 320px;
+  height: auto;
+  filter: grayscale(100%);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+/* Text Blocks around */
+.about-text {
+  position: absolute;
+  max-width: 240px;
+  color: #000000;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.about-number {
+  font-size: 1rem;
+  color: #000000;
+  font-weight: 600;
+}
+
+.about-heading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 6px;
+}
+
+/* Positioning around photo */
+.about-top-left {
+  top: 10%;
+  left: 20%;
+}
+
+.about-top-right {
+  top: 10%;
+  right: 20%;
+}
+
+.about-bottom-left {
+  bottom: 10%;
+  left: 20%;
+}
+
+.about-bottom-right {
+  bottom: 10%;
+  right: 20%;
+}
+
+/* ========================= */
+/* QUOTE SECTION */
+/* ========================= */
+
+.quote-section {
+  margin-top: 120px;
+  padding: 100px 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  background: #ffffff;
+}
+
+/* LEFT PHOTO */
+.quote-left {
+  display: flex;
+  justify-content: center;
+}
+
+.quote-photo {
+  width: 100%;
+  max-width: 420px;
+  filter: grayscale(100%);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+}
+
+/* RIGHT QUOTE TEXT */
+.quote-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-text {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #000000;
+  line-height: 1.6;
+  max-width: 480px;
+  text-align: left;
+  border-left: 4px solid #1a4b1a; /* subtle green detail */
+  padding-left: 20px;
+}
+
+.quote-right {
+  transform: translateY(-125px);
+}
+
+/* PROJECTS BUTTON BELOW QUOTE */
+.projects-btn-wrapper {
+  text-align: center;
+  margin-left: 370px;
+  margin-top: -275px;
+  margin-bottom: 120px;
+}
+
+.projects-btn { 
+  padding: 14px 40px;
+  background: #fff;         /* WHITE BACKGROUND */
+  color: #000;              /* BLACK TEXT */
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 1px solid #000;   /* BLACK BORDER */
+  cursor: pointer;
+  transition: 0.25s ease;
+  letter-spacing: 1px;
+}
+
+.projects-btn:hover {
+  background: #000;         /* TURN BLACK */
+  color: #fff;              /* WHITE TEXT */
+  box-shadow: none;         /* NO SHADOW */
+  transform: none;          /* REMOVE ZOOM & LIFT ANIMATION */
+}
+
+
+/* =================================== */
+/* NEW FOOTER LAYOUT WITH DIVIDER */
+/* =================================== */
+
+.footer {
+  background: #111;
+  padding: 40px 0;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  justify-items: center;
+  margin-top: 250px;
+}
+
+/* LEFT SIDE — SIGNATURE */
+.footer-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signature-img {
+  width: 250px;
+  opacity: 1;
+  transition: 0.2s ease;
+}
+
+.signature-img:hover {
+  opacity: 1;
+  transform: none;        /* REMOVE ZOOM */
+}
+
+
+/* VERTICAL DIVIDER */
+.footer-divider-vertical {
+  width: 2px;
+  height: 90px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* RIGHT SIDE — SOCIAL ICONS */
+.footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-icons a {
+  background: rgba(255,255,255,0.15);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.footer-icons a:hover {
+  background: #fff;
+  color: #111;
+  transform: none;         /* REMOVE ZOOM */
+  box-shadow: none;        /* CLEAN */
+}
+
+/* COPYRIGHT */
+.footer-copy-wrapper {
+  background: #111;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.footer-copy {
+  color: #E0E0E0;
+  font-size: 0.95rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
