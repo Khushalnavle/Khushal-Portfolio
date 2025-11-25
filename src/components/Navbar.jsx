@@ -1,5 +1,6 @@
 import React from "react";
 import "./Navbar.css";
+import { track } from "@vercel/analytics";
 
 const Navbar = () => {
   return (
@@ -14,11 +15,45 @@ const Navbar = () => {
       {/* Slide Panel */}
       <div className="side-panel hover-zone">
         <div className="panel-content">
-          <a href="/" className="nav-link">Home</a>
-          <a href="/skills" className="nav-link">Skills</a>
-          <a href="/projects" className="nav-link">Projects</a>
-          <a href="/gallery" className="nav-link">Gallery</a>
-          <a href="/contact" className="nav-link">Contact</a>
+          <a 
+            href="/" 
+            className="nav-link"
+            onClick={() => track("nav_click", { page: "Home" })}
+          >
+            Home
+          </a>
+
+          <a 
+            href="/skills" 
+            className="nav-link"
+            onClick={() => track("nav_click", { page: "Skills" })}
+          >
+            Skills
+          </a>
+
+          <a 
+            href="/projects" 
+            className="nav-link"
+            onClick={() => track("nav_click", { page: "Projects" })}
+          >
+            Projects
+          </a>
+
+          <a 
+            href="/gallery" 
+            className="nav-link"
+            onClick={() => track("nav_click", { page: "Gallery" })}
+          >
+            Gallery
+          </a>
+
+          <a 
+            href="/contact" 
+            className="nav-link"
+            onClick={() => track("nav_click", { page: "Contact" })}
+          >
+            Contact
+          </a>
         </div>
       </div>
     </>
