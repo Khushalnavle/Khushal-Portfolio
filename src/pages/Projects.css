@@ -195,3 +195,62 @@
   }
 }
 
+/* =============================== */
+/* MOBILE — PERFECT RESPONSIVE FIX */
+/* =============================== */
+
+@media (max-width: 1100px) {
+  .projects-container {
+    padding: 40px 40px;
+  }
+
+  .masonry-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    grid-auto-rows: 220px;
+  }
+
+  .project-card.wide {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 750px) {
+  .projects-container {
+    padding: 30px 20px;
+  }
+
+  .projects-heading {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .masonry-grid {
+    grid-template-columns: 1fr !important;
+    grid-auto-rows: auto;
+    gap: 20px;
+  }
+
+  /* FORCE all cards to be same size on mobile */
+  .project-card,
+  .project-card.tall,
+  .project-card.wide {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+    min-height: 240px;
+  }
+
+  .project-inner {
+    padding: 22px;
+    min-height: 240px;
+  }
+
+  .project-default h3 {
+    font-size: 1.3rem;
+  }
+
+  .project-default p,
+  .project-hover p {
+    font-size: 0.95rem;
+  }
+}

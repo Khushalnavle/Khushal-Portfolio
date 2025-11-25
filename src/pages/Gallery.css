@@ -147,3 +147,63 @@
   margin-bottom: 150px;      /* extra space before images */
 }
 
+/* ========================================================= */
+/* MOBILE RESPONSIVE — MATCHES OTHER PAGES                   */
+/* ========================================================= */
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .gallery-container {
+    padding: 40px 50px;
+  }
+
+  .gallery-grid {
+    column-count: 2;
+    column-gap: 20px;
+  }
+
+  .gallery-card {
+    margin-bottom: 20px;
+  }
+
+  .gallery-quote {
+    font-size: 1.5rem;
+    margin-top: 70px;
+    margin-bottom: 100px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .gallery-container {
+    padding: 30px 20px;
+  }
+
+  .gallery-grid {
+    column-count: 1;
+    column-gap: 0px;
+  }
+
+  .gallery-card {
+    margin-bottom: 18px;
+    border-radius: 12px;
+  }
+
+  .gallery-img {
+    border-radius: 12px;
+  }
+
+  .gallery-quote {
+    font-size: 1.3rem;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    padding: 0 10px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 450px) {
+  .gallery-quote {
+    font-size: 1.2rem;
+  }
+}

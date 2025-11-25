@@ -1,12 +1,16 @@
 import React from "react";
 import "./Home.css";
 import Navbar from "../components/Navbar";
+import { useNavigate } from "react-router-dom"; 
 import myPhoto1 from "../assets/images/Photo1.jpg";
 import myPhoto2 from "../assets/images/Photo2.jpg";
 import myPhoto3 from "../assets/images/Photo3.jpg";
 import Sign from "../assets/images/Sign.png";
 
 const Home = () => {
+
+  const navigate = useNavigate();
+
   return (
     <>
       <Navbar />
@@ -78,11 +82,15 @@ const Home = () => {
 
       </div>
 
-        {/* PROJECTS BUTTON */}
-        <div className="projects-btn-wrapper">
-          <button className="projects-btn">Projects</button>
-        </div>
-
+      {/* PROJECTS BUTTON */}
+      <div className="projects-btn-wrapper">
+        <button 
+          className="projects-btn"
+          onClick={() => navigate("/projects")}   // <-- FIXED
+        >
+          Projects
+        </button>
+      </div>
       <footer className="footer">
 
       {/* LEFT SIDE — SIGNATURE */}

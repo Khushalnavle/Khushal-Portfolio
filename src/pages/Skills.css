@@ -85,3 +85,41 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ===================================== */
+/* MOBILE RESPONSIVE — SKILLS PAGE */
+/* ===================================== */
+@media (max-width: 768px) {
+
+  /* Page layout */
+  .skills-container {
+    height: auto;
+    padding: 80px 20px;
+  }
+
+  /* Turn 2×2 grid into 1-column stacked cards */
+  .skills-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: auto;
+    gap: 20px;
+  }
+
+  /* Each card becomes shorter with cleaner spacing */
+  .skill-card {
+    padding: 25px 20px;
+    min-height: 180px;
+  }
+
+  /* Title smaller */
+  .skill-title {
+    font-size: 1.6rem;
+  }
+
+  /* Desc text slightly smaller */
+  .skill-desc {
+    font-size: 1rem;
+  }
+
+  /* Animation stays same — no change needed */
+}

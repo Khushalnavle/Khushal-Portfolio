@@ -300,3 +300,110 @@
   letter-spacing: 0.5px;
 }
 
+/* ===================================== */
+/* MOBILE RESPONSIVE — HOME PAGE */
+/* ===================================== */
+@media (max-width: 768px) {
+
+  /* Fix page padding */
+  .home-wrapper {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+    text-align: center;
+    min-height: auto;
+  }
+
+  /* Title smaller */
+  .home-title {
+    font-size: 2.6rem;
+  }
+
+  .home-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  /* Center the image */
+  .home-right {
+    margin-top: 20px;
+  }
+
+  .profile-img, 
+  .home-hover-img {
+    max-width: 260px;
+    margin-top: 0;
+  }
+
+  /* ABOUT SECTION MOBILE */
+  .about-creative {
+    margin-top: 80px;
+    padding: 60px 20px;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .about-center-img img {
+    width: 220px;
+  }
+
+  /* Hide 4 surrounding text blocks to avoid clutter */
+  .about-text {
+    position: static;
+    max-width: 95%;
+    margin-top: 25px;
+    text-align: center;
+  }
+
+  /* QUOTE SECTION */
+  .quote-section {
+    grid-template-columns: 1fr;
+    padding: 60px 20px;
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .quote-right {
+    transform: none;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .quote-text {
+    max-width: 100%;
+    border-left: none;
+    padding-left: 0;
+    font-size: 1.1rem;
+  }
+
+  /* PROJECTS BUTTON */
+  .projects-btn-wrapper {
+    margin: 40px 0;
+    margin-left: 0;
+  }
+
+  /* FOOTER MOBILE */
+  .footer {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 40px 0;
+    margin-top: 100px;
+  }
+
+  .footer-divider-vertical {
+    display: none;
+  }
+
+  .signature-img {
+    width: 180px;
+  }
+
+  .footer-icons {
+    gap: 14px;
+  }
+
+  .footer-icons a {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+}
